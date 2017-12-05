@@ -5,8 +5,15 @@
 {{ versionRepo }}:
   repo_url: https://artifacts.elastic.co/packages/5.x/apt
   configfile: /etc/kibana/kibana.yml
-  {% endif %}
+  {% elif versionRepo.startswith('6.') %}
+{{ versionRepo }}:
+  repo_url: https://artifacts.elastic.co/packages/6.x/apt
+  configfile: /etc/kibana/kibana.yml
 {% endif %}
+
+'6':
+  repo_url: https://artifacts.elastic.co/packages/6.x/apt
+  configfile: /etc/kibana/kibana.yml
 
 '5':
   repo_url: https://artifacts.elastic.co/packages/5.x/apt
